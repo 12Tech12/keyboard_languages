@@ -45,16 +45,24 @@ class KeyboardLanguagesPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
 
   override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
     if (call.method == "getKeyboardLanguages") {
-      var imm : InputMethodManager = activity.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-      var ims = imm.getCurrentInputMethodSubtype()
-      var localeString = ims.getLocale()
-      var locale = Locale(localeString)
-      var currentLanguage = locale.getDisplayLanguage()
+      // var imm : InputMethodManager = activity.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+      // var ims = imm.getCurrentInputMethodSubtype()
+      // var localeString = ims.getLocale()
+      // var locale = Locale(localeString)
+      // var currentLanguage = locale.getDisplayLanguage()
+      // val keyboardLanguages = mutableListOf<String>()
+      // keyboardLanguages.add(currentLanguage)
+      // keyboardLanguages.add("test")
+      // keyboardLanguages.add("me")
+      // result.success(keyboardLanguages)
+
       val keyboardLanguages = mutableListOf<String>()
-      keyboardLanguages.add(currentLanguage)
-      keyboardLanguages.add("test")
-      keyboardLanguages.add("me")
+      var locales = Locale.getAvailableLocales();
+      locales.forEach {
+        keyboardLanguages.add(it.toString())
+      }
       result.success(keyboardLanguages)
+
     } else {
       result.notImplemented()
     }
