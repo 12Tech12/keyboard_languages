@@ -9,8 +9,12 @@ public class SwiftKeyboardLanguagesPlugin: NSObject, FlutterPlugin {
   }
 
   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
-    let localeIdentifier = UITextInputMode.activeInputModes().first as? UITextInputMode
-    var locale:NSLocale = NSLocale(localeIdentifier: localeIdentifier.primaryLanguage!)
-    result("iOS:" + \(localeIdentifier.primaryLanguage!))
+    var res = [String]()
+    for activeInputMode in UITextInputMode.activeInputModes {
+    let localeIdentifier = activeInputMode as? UITextInputMode
+      res.append("\(localeIdentifier!.primaryLanguage!)");
+    }
+
+    result(res)
   }
 }
