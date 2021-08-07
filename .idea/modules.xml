@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/keyboard_languages.iml" filepath="$PROJECT_DIR$/keyboard_languages.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android/keyboard_languages_android.iml" filepath="$PROJECT_DIR$/android/keyboard_languages_android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/android/keyboard_languages_example_android.iml" filepath="$PROJECT_DIR$/example/android/keyboard_languages_example_android.iml" />
+    </modules>
+  </component>
+</project>
