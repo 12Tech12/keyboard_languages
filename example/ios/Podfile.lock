@@ -1,0 +1,22 @@
+PODS:
+  - Flutter (1.0.0)
+  - keyboard_languages (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - keyboard_languages (from `.symlinks/plugins/keyboard_languages/ios`)
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  keyboard_languages:
+    :path: ".symlinks/plugins/keyboard_languages/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 434fef37c0980e73bb6479ef766c45957d4b510c
+  keyboard_languages: 9107982ff1ae0f4ac976df67d83c7674cd72a16c
+
+PODFILE CHECKSUM: de2120689bd64c50778c43ebcd6de450aa1587e0
+
+COCOAPODS: 1.10.1
