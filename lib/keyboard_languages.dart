@@ -2,9 +2,12 @@ import 'dart:async';
 
 import 'package:flutter/services.dart';
 
-const MethodChannel _keyboardLanguagesChannel = MethodChannel('keyboard_languages');
+/// MethodChannel to native code
+const MethodChannel _keyboardLanguagesChannel =
+    MethodChannel('keyboard_languages');
 
+/// Obtain available keyboard languages
 Future<List<String>?> getKeyboardLanguages() async {
-  final List<String>? keyboardLangauges = await _keyboardLanguagesChannel.invokeListMethod<String>('getKeyboardLanguages');
-  return keyboardLangauges;
+  return await _keyboardLanguagesChannel
+      .invokeListMethod<String>('getKeyboardLanguages');
 }

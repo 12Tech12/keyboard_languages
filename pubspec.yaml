@@ -1,5 +1,5 @@
 name: keyboard_languages
-description: Obtain available keyboard languages.
+description: Flutter plugin to obtain available keyboard languages (iOS and Android).
 version: 0.1.1
 homepage: https://github.com/12Tech12/keyboard_languages
 
