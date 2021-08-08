@@ -2,4 +2,4 @@
 
 * Initial release.
 * Support iOS and Android.
-* Use `keyboardLanguages` to obtain list of available keyboard languages.
+* Use `getKeyboardLanguages` to obtain list of available keyboard languages.
