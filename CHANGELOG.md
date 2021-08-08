@@ -1,3 +1,7 @@
+## 0.1.3
+
+* Fix: Use well-formed IETF BCP 47 language tag for Android.
+
 ## 0.1.2
 
 * Extra documentation fixes.
@@ -10,4 +14,4 @@
 
 * Initial release.
 * Support iOS and Android.
-* Use `getKeyboardLanguages` to obtain list of available keyboard languages.
+* Use `getKeyboardLanguages()` to obtain list of available keyboard languages.

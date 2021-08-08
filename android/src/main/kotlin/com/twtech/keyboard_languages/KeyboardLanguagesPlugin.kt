@@ -29,7 +29,7 @@ class KeyboardLanguagesPlugin: FlutterPlugin, MethodCallHandler {
       while (numLocales > 0) {
         numLocales--
         var locale = locales.get(numLocales)
-        keyboardLanguages.add(locale.toString())
+        keyboardLanguages.add(locale.toLanguageTag())
       }
       result.success(keyboardLanguages)
 
