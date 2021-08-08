@@ -8,6 +8,7 @@ import android.content.ContextWrapper
 import android.content.Intent
 import android.content.IntentFilter
 
+import android.os.LocaleList
 import android.os.Build.VERSION
 import android.os.Build.VERSION_CODES
 
@@ -45,21 +46,13 @@ class KeyboardLanguagesPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
 
   override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
     if (call.method == "getKeyboardLanguages") {
-      // var imm : InputMethodManager = activity.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-      // var ims = imm.getCurrentInputMethodSubtype()
-      // var localeString = ims.getLocale()
-      // var locale = Locale(localeString)
-      // var currentLanguage = locale.getDisplayLanguage()
-      // val keyboardLanguages = mutableListOf<String>()
-      // keyboardLanguages.add(currentLanguage)
-      // keyboardLanguages.add("test")
-      // keyboardLanguages.add("me")
-      // result.success(keyboardLanguages)
-
       val keyboardLanguages = mutableListOf<String>()
-      var locales = Locale.getAvailableLocales();
-      locales.forEach {
-        keyboardLanguages.add(it.toString())
+      var locales = LocaleList.getDefault();
+      var numLocales = locales.size()
+      while (numLocales > 0) {
+        numLocales--
+        var locale = locales.get(numLocales)
+        keyboardLanguages.add(locale.toString())
       }
       result.success(keyboardLanguages)
 
