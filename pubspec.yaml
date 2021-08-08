@@ -1,6 +1,6 @@
 name: keyboard_languages
-description: A new flutter plugin project.
-version: 0.0.1
+description: Obtain available keyboard languages.
+version: 0.1.0
 homepage:
 
 environment:
