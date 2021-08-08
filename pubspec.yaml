@@ -1,6 +1,6 @@
 name: keyboard_languages
 description: Obtain available keyboard languages.
-version: 0.1.0
+version: 0.1.1
 homepage: https://github.com/12Tech12/keyboard_languages
 
 environment:
