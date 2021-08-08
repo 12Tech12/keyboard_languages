@@ -11,15 +11,14 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:keyboard_languages_example/main.dart';
 
 void main() {
-  testWidgets('Verify Platform version', (WidgetTester tester) async {
+  testWidgets('Verify Keyboard Languages', (WidgetTester tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(MyApp());
 
-    // Verify that platform version is retrieved.
+    // Verify that Keyboard Languages are retrieved.
     expect(
       find.byWidgetPredicate(
-        (Widget widget) => widget is Text &&
-                           widget.data!.startsWith('Running on:'),
+        (Widget widget) => widget is Text && widget.data!.startsWith('Running on:'),
       ),
       findsOneWidget,
     );

@@ -17,7 +17,7 @@ void main() {
     channel.setMockMethodCallHandler(null);
   });
 
-  test('getPlatformVersion', () async {
-    expect(await KeyboardLanguages.platformVersion, '42');
+  test('getKeyboardLanguages', () async {
+    expect(await KeyboardLanguages.keyboardLanguages, '42');
   });
 }

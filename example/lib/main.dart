@@ -19,19 +19,18 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    initPlatformState();
+    initKeyboardLanguagesState();
   }
 
   // Platform messages are asynchronous, so we initialize in an async method.
-  Future<void> initPlatformState() async {
+  Future<void> initKeyboardLanguagesState() async {
     List<Object?> keyboardLanguages;
     // Platform messages may fail, so we use a try/catch PlatformException.
     // We also handle the message potentially returning null.
     try {
-      keyboardLanguages =
-          await KeyboardLanguages.platformVersion ?? [];
+      keyboardLanguages = await KeyboardLanguages.keyboardLanguages ?? [];
     } on PlatformException {
-      keyboardLanguages = ['Failed to get platform version.'];
+      keyboardLanguages = ['Failed to get keyboard languages.'];
     }
 
     // If the widget was removed from the tree while the asynchronous platform
@@ -42,7 +41,7 @@ class _MyAppState extends State<MyApp> {
     setState(() {
       _keyboardLanguages = '';
       for (var kl in keyboardLanguages) {
-      _keyboardLanguages += kl.toString() + ", ";
+        _keyboardLanguages += kl.toString() + ", ";
       }
     });
   }
