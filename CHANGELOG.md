@@ -1,3 +1,7 @@
+## 0.1.2
+
+* Extra documentation fixes.
+
 ## 0.1.1
 
 * Minor documentation fix.
