@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'dart:async';
+import 'package:flutter/material.dart';
 
 import 'package:flutter/services.dart';
 import 'package:keyboard_languages/keyboard_languages.dart';
@@ -24,24 +24,26 @@ class _MyAppState extends State<MyApp> {
 
   // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> initKeyboardLanguagesState() async {
-    List<Object?> keyboardLanguages;
+    List<String> keyboardLanguages;
     // Platform messages may fail, so we use a try/catch PlatformException.
     // We also handle the message potentially returning null.
     try {
-      keyboardLanguages = await KeyboardLanguages.keyboardLanguages ?? [];
+      keyboardLanguages = await getKeyboardLanguages() ?? <String>[];
     } on PlatformException {
-      keyboardLanguages = ['Failed to get keyboard languages.'];
+      keyboardLanguages = <String>['Failed to get keyboard languages.'];
     }
 
     // If the widget was removed from the tree while the asynchronous platform
     // message was in flight, we want to discard the reply rather than calling
     // setState to update our non-existent appearance.
-    if (!mounted) return;
+    if (!mounted) {
+      return;
+    }
 
     setState(() {
       _keyboardLanguages = '';
-      for (var kl in keyboardLanguages) {
-        _keyboardLanguages += kl.toString() + ", ";
+      for (final String kl in keyboardLanguages) {
+        _keyboardLanguages += kl.toString() + ', ';
       }
     });
   }

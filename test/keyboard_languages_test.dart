@@ -18,6 +18,6 @@ void main() {
   });
 
   test('getKeyboardLanguages', () async {
-    expect(await KeyboardLanguages.keyboardLanguages, '42');
+    expect(await getKeyboardLanguages(), '42');
   });
 }
