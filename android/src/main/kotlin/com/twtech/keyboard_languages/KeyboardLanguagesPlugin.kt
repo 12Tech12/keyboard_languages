@@ -7,6 +7,7 @@ import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler
 import io.flutter.plugin.common.MethodChannel.Result
+import java.util.Locale;
 
 /** KeyboardLanguagesPlugin */
 class KeyboardLanguagesPlugin: FlutterPlugin, MethodCallHandler {
@@ -24,15 +25,19 @@ class KeyboardLanguagesPlugin: FlutterPlugin, MethodCallHandler {
   override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
     if (call.method == "getKeyboardLanguages") {
       val keyboardLanguages = mutableListOf<String>()
-      var locales = LocaleList.getDefault();
-      var numLocales = locales.size()
-      while (numLocales > 0) {
-        numLocales--
-        var locale = locales.get(numLocales)
-        keyboardLanguages.add(locale.toLanguageTag())
+      if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+        var locales = LocaleList.getDefault();
+        var numLocales = locales.size()
+        var i = 0
+        while (i < numLocales) {
+          var locale = locales.get(i)
+          keyboardLanguages.add(locale.toLanguageTag())
+          i++
+        }
+      } else {
+        keyboardLanguages.add(Locale.getDefault().toString())
       }
       result.success(keyboardLanguages)
-
     } else {
       result.notImplemented()
     }
