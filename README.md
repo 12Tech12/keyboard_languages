@@ -4,7 +4,7 @@ Flutter plugin that lists available keyboard languages in Android/iOS device.
 
 ## Installation
 
-Add `keyboard_languages: ^0.1.3` in your `pubspec.yaml` dependencies. And import it:
+Add `keyboard_languages: ^0.1.4` in your `pubspec.yaml` dependencies, and import it:
 
 ```dart
 import 'package:keyboard_languages/keyboard_languages.dart';
@@ -25,4 +25,4 @@ try {
 }
 ```
 
-For a more detail example please take a look at the `example` folder.
+For a more detailed example please take a look at the `example` folder.

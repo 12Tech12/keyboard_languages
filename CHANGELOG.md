@@ -1,3 +1,7 @@
+## 0.1.4
+
+* Fix: Support for Android devices with version < 7.
+
 ## 0.1.3
 
 * Fix: Use well-formed IETF BCP 47 language tag for Android.
